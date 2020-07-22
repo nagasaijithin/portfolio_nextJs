@@ -18,6 +18,8 @@ const GlobalStyle = createGlobalStyle`
 html {
     box-sizing: border-box;
     font-size: 52.6%;
+    scroll-behavior: smooth;
+
 }
  body {
     font-family: 'Raleway', sans-serif;

@@ -18,6 +18,13 @@ const NavWapper = styled.div`
     justify-content: space-evenly;
     list-style: none;
     font-size: 2.5rem;
+    & > li {
+      cursor: pointer;
+    }
+    & > li > a {
+      color: ${({ theme }) => theme.colors.textColor};
+      text-decoration: none;
+    }
     & > li > svg {
       width: 5rem;
       height: auto;
@@ -32,9 +39,28 @@ const LayOut = ({ children }) => {
           <li>
             <MainWitchLogo />
           </li>
-          <li>Home</li>
-          <li>About me</li>
-          <li>Contact me</li>
+          <li onClick={() => document.getElementById("home").scrollIntoView()}>
+            Home
+          </li>
+          <li
+            onClick={() => document.getElementById("aboutme").scrollIntoView()}
+          >
+            About me
+          </li>
+          <li
+            onClick={() =>
+              document.getElementById("portfolio").scrollIntoView()
+            }
+          >
+            Portfolio
+          </li>
+          <li
+            onClick={() =>
+              document.getElementById("contactme").scrollIntoView()
+            }
+          >
+            Contact me
+          </li>
         </ul>
       </NavWapper>
       {children}
