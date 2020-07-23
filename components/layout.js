@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import MainWitchLogo from "../images/whitelogo.svg";
+import { useRouter } from "next/router";
+import Link from "next/link";
 const MainLayout = styled.div`
   display: flex;
   background-color: ${({ theme }) => theme.colors.blackBackground};
@@ -31,7 +33,33 @@ const NavWapper = styled.div`
     }
   }
 `;
+const HomeLinks = () => (
+  <>
+    <li onClick={() => document.getElementById("home").scrollIntoView()}>
+      Home
+    </li>
+    <li onClick={() => document.getElementById("aboutme").scrollIntoView()}>
+      About me
+    </li>
+    <li onClick={() => document.getElementById("portfolio").scrollIntoView()}>
+      Portfolio
+    </li>
+    <li onClick={() => document.getElementById("contactme").scrollIntoView()}>
+      Contact me
+    </li>
+  </>
+);
+const ProjectLinks = () => (
+  <li>
+    <Link href="/">
+      <a>Go Back</a>
+    </Link>
+  </li>
+);
 const LayOut = ({ children }) => {
+  const router = useRouter();
+  const { id } = router.query;
+  console.log(id);
   return (
     <MainLayout>
       <NavWapper>
@@ -39,28 +67,7 @@ const LayOut = ({ children }) => {
           <li>
             <MainWitchLogo />
           </li>
-          <li onClick={() => document.getElementById("home").scrollIntoView()}>
-            Home
-          </li>
-          <li
-            onClick={() => document.getElementById("aboutme").scrollIntoView()}
-          >
-            About me
-          </li>
-          <li
-            onClick={() =>
-              document.getElementById("portfolio").scrollIntoView()
-            }
-          >
-            Portfolio
-          </li>
-          <li
-            onClick={() =>
-              document.getElementById("contactme").scrollIntoView()
-            }
-          >
-            Contact me
-          </li>
+          {id ? <ProjectLinks /> : <HomeLinks />}
         </ul>
       </NavWapper>
       {children}

@@ -54,10 +54,15 @@ const AllprojectsWapper = styled.div`
   & > div > div {
     width: 80%;
     margin: 0 auto;
-    & > h1,
-    h2,
-    a {
+    & > h1 {
       margin: 1rem 0;
+    }
+    & > p {
+      margin: 1rem 0;
+    }
+    & > a {
+      margin: 1rem 0;
+      color: ${({ theme }) => theme.colors.textColor};
     }
   }
 `;

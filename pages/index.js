@@ -1,5 +1,8 @@
 import styled from "styled-components";
 import Allprojects from "../components/allproject";
+import FacebookIcon from "../images/facebookIcon.svg";
+import GithubIcon from "../images/githubicon.svg";
+import InstagramIcon from "../images/instagramicon.svg";
 const HomeWapper = styled.main`
   width: 100%;
   scroll-behavior: smooth;
@@ -72,6 +75,16 @@ const FooterWapper = styled.footer`
     margin: 1rem auto;
   }
 `;
+const IconsWapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 2rem 0;
+
+  & > a > svg {
+    height: 5rem;
+  }
+`;
 const Home = () => {
   return (
     <HomeWapper>
@@ -132,6 +145,20 @@ const Home = () => {
           Let's Build Something Together Feel free to reach out if you're
           looking for a Front end web developer,
         </h2>
+        <IconsWapper>
+          <a href="https://www.facebook.com/pasupuleti.jithin/" target="_blank">
+            <FacebookIcon />
+          </a>
+          <a href="https://github.com/nagasaijithin" target="_blank">
+            <GithubIcon />
+          </a>
+          <a
+            href="https://www.instagram.com/nagasaijithin_pasupuleti/"
+            target="_blank"
+          >
+            <InstagramIcon />
+          </a>
+        </IconsWapper>
       </FooterWapper>
     </HomeWapper>
   );
