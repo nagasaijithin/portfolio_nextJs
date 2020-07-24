@@ -48,7 +48,8 @@ const projectdata = [
 const AllprojectsWapper = styled.div`
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(2, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+
   padding: 2rem;
   grid-gap: 3rem;
   & > div > div {

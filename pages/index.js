@@ -1,8 +1,7 @@
 import styled from "styled-components";
 import Allprojects from "../components/allproject";
-import FacebookIcon from "../images/facebookIcon.svg";
-import GithubIcon from "../images/githubicon.svg";
-import InstagramIcon from "../images/instagramicon.svg";
+import Footer from "../components/footer";
+
 const HomeWapper = styled.main`
   width: 100%;
   scroll-behavior: smooth;
@@ -12,14 +11,13 @@ const PosterWapper = styled.section`
   height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
   scroll-behavior: smooth;
 
   & > div {
-    font-size: 3.5rem;
+    font-size: 6rem;
     color: ${({ theme }) => theme.colors.textColor};
-    margin: 0 0 0 5rem;
-    padding: 0 0 0 5rem;
+    margin: 5rem;
     line-height: 1.4;
   }
 `;
@@ -30,7 +28,8 @@ const AboutMeWapper = styled.section`
   align-items: center;
   justify-content: space-evenly;
   padding: 4rem;
-  font-size: 2rem;
+  font-size: 2.5rem;
+
   text-align: center;
   color: white;
   line-height: 1.5;
@@ -41,7 +40,8 @@ const AboutMeWapper = styled.section`
   }
 `;
 const PortfolioWapper = styled.section`
-  font-size: 2rem;
+  font-size: 2.5rem;
+
   color: white;
   display: flex;
   flex-direction: column;
@@ -56,35 +56,7 @@ const PortfolioWapper = styled.section`
     font-weight: 200;
   }
 `;
-const FooterWapper = styled.footer`
-  height: 30vh;
-  color: white;
-  font-size: 1.5rem;
-  width: 80%;
-  margin: 1rem auto;
-  text-align: center;
-  scroll-behavior: smooth;
 
-  & > h2,
-  h1 {
-    margin: 1rem;
-  }
-  & > h2 {
-    font-weight: 200;
-    width: 70%;
-    margin: 1rem auto;
-  }
-`;
-const IconsWapper = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  margin: 2rem 0;
-
-  & > a > svg {
-    height: 5rem;
-  }
-`;
 const Home = () => {
   return (
     <HomeWapper>
@@ -139,27 +111,7 @@ const Home = () => {
         <h2>What I've been working on</h2>
         <Allprojects />
       </PortfolioWapper>
-      <FooterWapper id="contactme">
-        <h1>Contact Me</h1>
-        <h2>
-          Let's Build Something Together Feel free to reach out if you're
-          looking for a Front end web developer,
-        </h2>
-        <IconsWapper>
-          <a href="https://www.facebook.com/pasupuleti.jithin/" target="_blank">
-            <FacebookIcon />
-          </a>
-          <a href="https://github.com/nagasaijithin" target="_blank">
-            <GithubIcon />
-          </a>
-          <a
-            href="https://www.instagram.com/nagasaijithin_pasupuleti/"
-            target="_blank"
-          >
-            <InstagramIcon />
-          </a>
-        </IconsWapper>
-      </FooterWapper>
+      <Footer />
     </HomeWapper>
   );
 };

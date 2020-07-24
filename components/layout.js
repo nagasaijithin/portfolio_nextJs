@@ -19,9 +19,12 @@ const NavWapper = styled.div`
     align-items: center;
     justify-content: space-evenly;
     list-style: none;
-    font-size: 2.5rem;
+    font-size: 3rem;
     & > li {
       cursor: pointer;
+      -webkit-text-stroke-color: white;
+      -webkit-text-stroke-width: 0.5px;
+      -webkit-text-fill-color: transparent;
     }
     & > li > a {
       color: ${({ theme }) => theme.colors.textColor};
