@@ -85,7 +85,9 @@ const Allprojects = () => {
       {projectdata.map(({ info, name, image, imagegif }, i) => (
         <div key={i}>
           <div>
-            <Cardimg image={image} imagegif={imagegif}></Cardimg>
+            <Link href="projects/[id]" as={`projects/${i}`}>
+              <Cardimg image={image} imagegif={imagegif}></Cardimg>
+            </Link>
             <h2>{name}</h2>
             <p>{info}</p>
             <Link href="projects/[id]" as={`projects/${i}`}>

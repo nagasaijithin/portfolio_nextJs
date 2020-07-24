@@ -18,7 +18,7 @@ const projectdata = [
     image: sayhi,
     imagegif: sayhigif,
     fullcontent:
-      "SayHi is Build With React-Redux-firebase, Firebase Providing Awesome Services For A Developer it provides the realtime database, fire store, cloud functions, deployments, that inspires me to build this web app along the way I learn a lot of things about react, redux, firebase after completed this project that motived me learn more about this awesome tool   ",
+      "SayHi is Build With React-Redux-firebase, Firebase Providing Awesome Services For A Developer it Provides The Realtime database, firestore, cloud functions, Deployments, That Inspires Me To Build This Web Application Along The Way I learn a lot of things about react, redux, firebase, styled-components, after completed this project that motived me learn more about this awesome tool   ",
   },
   {
     name: "PhotoHub",
@@ -26,7 +26,7 @@ const projectdata = [
     image: photohub,
     imagegif: photogif,
     fullcontent:
-      "SayHi is Build With React-Redux-firebase, Firebase Providing Awesome Services For A Developer it provides the realtime database, fire store, cloud functions, deploy, that inspires me to build this web app ",
+      "Photo hub is service to providing high-quality images for a user can see the different types of images and collections and Download images. This build with react,redux and styled-components with 'unsplash' API ",
   },
   {
     name: "Movies",
@@ -35,7 +35,7 @@ const projectdata = [
     image: moviesPoster,
     imagegif: moviesgif,
     fullcontent:
-      "SayHi is Build With React-Redux-firebase, Firebase Providing Awesome Services For A Developer it provides the realtime database, fire store, cloud functions, deploy, that inspires me to build this web app ",
+      "Movies application build with HTML, CSS, javascript, and API from Themoviedb it's provided movies information like cast, trailers, movies rating and related movies ",
   },
   {
     name: "Weather App",
@@ -43,7 +43,7 @@ const projectdata = [
     image: wetherapp,
     imagegif: wetherapp,
     fullcontent:
-      "SayHi is Build With React-Redux-firebase, Firebase Providing Awesome Services For A Developer it provides the realtime database, fire store, cloud functions, deploy, that inspires me to build this web app ",
+      "This weather app detects your current location then show about your weather and Humidity, Wind And around City Weather, this app build with Html, CSS, javascript and OpenWeather API",
   },
   {
     name: "Restaurant",
