@@ -1,16 +1,36 @@
 import { useRouter } from "next/router";
 import styled from "styled-components";
+
 import Footer from "../../components/footer";
+/////
+// all image
+/////
 import moviesPoster from "../../images/posters/movieshub.png";
 import photohub from "../../images/posters/photohub.png";
 import restarunt from "../../images/posters/restarunt.png";
 import sayhi from "../../images/posters/sayhi.png";
 import wetherapp from "../../images/posters/weatherapp.png";
 
+/////
+// all gif
+/////
 import moviesgif from "../../images/gifs/movies.gif";
 import photogif from "../../images/gifs/photo.gif";
 import restaruntgif from "../../images/gifs/restarunt.gif";
 import sayhigif from "../../images/gifs/sayhi.gif";
+
+/////
+// all fulllayout
+/////
+
+import moviesFhome from "../../images/fulllayout/moviesFhome.png";
+import moviesFOne from "../../images/fulllayout/moviesFOne.png";
+import photoFcollection from "../../images/fulllayout/photoFcollection.png";
+import photoFhome from "../../images/fulllayout/photoFhome.png";
+import photoFone from "../../images/fulllayout/photoFone.png";
+import restaruntFhome from "../../images/fulllayout/restaruntFhome.png";
+import sayhiFhome from "../../images/fulllayout/sayhiFhome.png";
+import sayhiFprofile from "../../images/fulllayout/sayhiFprofile.png";
 const projectdata = [
   {
     name: "SayHI",
@@ -21,6 +41,10 @@ const projectdata = [
     site: "https://sayhi-dev-5fc85.firebaseapp.com/",
     code: "https://github.com/nagasaijithin/sayhi",
     stack: ["React", "Redux", "styled-components", "firebase"],
+    fullimages: [sayhiFhome, sayhiFprofile],
+    fullimgcontent: [
+      "This a home page of SayHi application, we can check the new post a post show's how many likes and comments when you click the post or comment icon you go to the post page there you can accesses all comments you can also like comment, This Home aloes without reloading content well update and more...",
+    ],
     fullcontent:
       "SayHi is Build With React-Redux-firebase, Firebase Providing Awesome Services For A Developer it Provides The Realtime database, firestore, cloud functions, Deployments, That Inspires Me To Build This Web Application Along The Way I learn a lot of things about react, redux, firebase, styled-components, after completed this project that motived me learn more about this awesome tool   ",
   },
@@ -32,6 +56,7 @@ const projectdata = [
     stack: ["React", "Redux", "styled-components"],
     code: "https://github.com/nagasaijithin/photo",
     site: "https://photohubjithin.netlify.app/",
+    fullimages: [photoFhome, photoFone, photoFcollection],
     fullcontent:
       "Photo hub is service to providing high-quality images for a user can see the different types of images and collections and Download images. This build with react,redux and styled-components with 'unsplash' API ",
   },
@@ -44,6 +69,7 @@ const projectdata = [
     stack: ["Html", "Sass", "javascript"],
     code: "https://github.com/nagasaijithin/movies.nagasaijithin",
     site: "https://moviesjithin.netlify.app/",
+    fullimages: [moviesFhome, moviesFOne],
     fullcontent:
       "Movies application build with HTML, CSS, javascript, and API from Themoviedb it's provided movies information like cast, trailers, movies rating and related movies ",
   },
@@ -55,6 +81,7 @@ const projectdata = [
     stack: ["Html", "Sass", "javascript"],
     code: "https://github.com/nagasaijithin/weathermain.nagasaijithin",
     site: "https://weatherjithin.netlify.app/",
+    fullimages: [],
     fullcontent:
       " Weather app build with Html, CSS, javascript and OpenWeather API, This App Detects Your Current Location Then Show About Your Weather And Humidity, Wind And around City Weather,",
   },
@@ -66,6 +93,7 @@ const projectdata = [
     stack: ["Html", "Sass", "javascript"],
     site: "https://restaurantsjithin.netlify.app/",
     code: "https://github.com/nagasaijithin/restaurantsapp.nagasaijithin",
+    fullimages: [restaruntFhome],
     fullcontent:
       "Restaurant Application Build with HTML, CSS, Javascript, and Zomato API, This App Detects The Current Location And Show  Around The Restaurant's Ratings, Images And More ",
   },
@@ -174,12 +202,44 @@ const BtnWapper = styled.div`
     }
   }
 `;
+const FullimageWapper = styled.div`
+  margin: 4rem;
+
+  & > div {
+    display: flex;
+    align-items: center;
+    & > div {
+      font-size: 3rem;
+      padding: 3rem;
+    }
+    & > img {
+      height: 50%;
+      width: 50%;
+    }
+  }
+  & > div:nth-child(even) {
+    & > div {
+      order: 1;
+    }
+    & > img {
+      order: 2;
+    }
+  }
+`;
 const Id = () => {
   const router = useRouter();
   const { id } = router.query;
   const oneproject = projectdata.filter((data, i) => i == id);
   if (oneproject.length >= 1) {
-    const { name, image, fullcontent, stack, site, code } = oneproject[0];
+    const {
+      name,
+      image,
+      fullcontent,
+      stack,
+      site,
+      code,
+      fullimages,
+    } = oneproject[0];
 
     return (
       <>
@@ -213,6 +273,25 @@ const Id = () => {
                 ))}
               </ul>
             </StackWapper>
+            <FullimageWapper>
+              {fullimages.map((data, i) => (
+                <div>
+                  <img src={data} alt={i} />
+                  <div>
+                    Lorem Ipsum is simply dummy text of the printing and
+                    typesetting industry. Lorem Ipsum has been the industry's
+                    standard dummy text ever since the 1500s, when an unknown
+                    printer took a galley of type and scrambled it to make a
+                    type specimen book. It has survived not only five centuries,
+                    but also the leap into electronic typesetting, remaining
+                    essentially unchanged. It was popularised in the 1960s with
+                    the release of Letraset sheets containing Lorem Ipsum
+                    passages, and more recently with desktop publishing software
+                    like Aldus PageMaker including versions of Lorem Ipsum.
+                  </div>
+                </div>
+              ))}
+            </FullimageWapper>
           </ContentWapper>
           <Footer />
         </ProjectWapper>

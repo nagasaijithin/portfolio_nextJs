@@ -1,15 +1,23 @@
 import styled from "styled-components";
 import Link from "next/link";
+
+/////
+// all images
+/////
 import moviesPoster from "../images/posters/movieshub.png";
 import photohub from "../images/posters/photohub.png";
 import restarunt from "../images/posters/restarunt.png";
 import sayhi from "../images/posters/sayhi.png";
 import wetherapp from "../images/posters/weatherapp.png";
 
+/////
+// all gif
+/////
 import moviesgif from "../images/gifs/movies.gif";
 import photogif from "../images/gifs/photo.gif";
 import restaruntgif from "../images/gifs/restarunt.gif";
 import sayhigif from "../images/gifs/sayhi.gif";
+
 const projectdata = [
   {
     name: "SayHI",
