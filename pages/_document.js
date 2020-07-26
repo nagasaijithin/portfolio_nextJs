@@ -29,7 +29,7 @@ export default class MyDocument extends Document {
   }
   render() {
     return (
-      <html>
+      <html data-mode="light">
         <Head>
           <title>Nagasai jithin</title>
           <link

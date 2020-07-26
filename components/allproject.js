@@ -56,7 +56,7 @@ const projectdata = [
 const AllprojectsWapper = styled.div`
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
 
   padding: 2rem;
   grid-gap: 3rem;
@@ -71,7 +71,7 @@ const AllprojectsWapper = styled.div`
     }
     & > a {
       margin: 1rem 0;
-      color: ${({ theme }) => theme.colors.textColor};
+      color: var(--blackTextColor);
     }
   }
 `;

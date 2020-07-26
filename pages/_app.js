@@ -6,7 +6,7 @@ import LayOut from "../components/layout";
 const theme = {
   colors: {
     blackBackground: "#3A3939",
-    textColor: "#ffffff",
+    blacktextColor: "#ffffff",
   },
 };
 const GlobalStyle = createGlobalStyle`
@@ -15,12 +15,19 @@ const GlobalStyle = createGlobalStyle`
     margin:0;
     box-sizing: border-box;
 }
+
 html {
     box-sizing: border-box;
     font-size: 52.6%;
     scroll-behavior: smooth;
-
+    --blackBackgroundColor: ${({ theme }) => theme.colors.blacktextColor};
+  --blackTextColor:${({ theme }) => theme.colors.blackBackground}   ;
 }
+
+html[data-mode="dark"] {
+  --blackBackgroundColor: ${({ theme }) => theme.colors.blackBackground};
+  --blackTextColor: ${({ theme }) => theme.colors.blacktextColor};
+} 
  body {
     font-family: 'Raleway', sans-serif;
  }

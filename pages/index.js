@@ -16,25 +16,26 @@ const PosterWapper = styled.section`
 
   & > div {
     font-size: 6rem;
-    color: ${({ theme }) => theme.colors.textColor};
+    color: var(--blackTextColor);
     margin: 5rem;
     line-height: 1.4;
   }
 `;
 const AboutMeWapper = styled.section`
-  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
   padding: 4rem;
   font-size: 2.5rem;
-
   text-align: center;
-  color: white;
+  color: var(--blackTextColor);
   line-height: 1.5;
   scroll-behavior: smooth;
 
+  & > div {
+    margin: 2rem 0;
+  }
   & > div > h2 {
     font-weight: 200;
   }
@@ -42,7 +43,7 @@ const AboutMeWapper = styled.section`
 const PortfolioWapper = styled.section`
   font-size: 2.5rem;
 
-  color: white;
+  color: var(--blackTextColor);
   display: flex;
   flex-direction: column;
   align-items: center;
