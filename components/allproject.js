@@ -62,9 +62,20 @@ const AllprojectsWapper = styled.div`
   @media ${({ theme }) => theme.mediaqury.laptopLarg} {
     grid-gap: 10rem;
   }
+  @media ${({ theme }) => theme.mediaqury.tabLarg} {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 4rem;
+  }
+  @media ${({ theme }) => theme.mediaqury.mblsmall} {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-gap: 4rem;
+  }
   & > div > div {
     width: 80%;
     margin: 0 auto;
+    @media ${({ theme }) => theme.mediaqury.tabLarg} {
+      width: 90%;
+    }
     & > h2 {
       margin: 2rem 0;
     }

@@ -11,6 +11,15 @@ const theme = {
   mediaqury: {
     laptopLarg: "(max-width: 844px)",
     laptopMid: "(max-width: 734px)",
+    projectMid: "(max-width: 647px)",
+    projectMid2: "(max-width: 593px)",
+    projectMid3: "(max-width: 483px)",
+    tabLarg: "(max-width: 420px)",
+    tabLarg2: "(max-width: 373px)",
+    tabLarg3: "(max-width: 409px)",
+    mblMid: "(max-width: 355px)",
+    mblMid2: "(max-width: 312px)",
+    mblsmall: "(max-width:265px)",
   },
 };
 const GlobalStyle = createGlobalStyle`
@@ -28,6 +37,10 @@ html {
   --blackTextColor:${({ theme }) => theme.colors.blackBackground}   ;
   @media ${({ theme }) => theme.mediaqury.laptopLarg} {
     font-size: 43.6%;
+
+  }
+  @media ${({ theme }) => theme.mediaqury.tabLarg} {
+    font-size: 38.6%;
 
   }
 }

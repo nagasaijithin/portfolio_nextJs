@@ -128,6 +128,19 @@ const PosterWapper = styled.div`
       -webkit-text-stroke-width: 0.5px;
       -webkit-text-fill-color: transparent;
       font-weight: 300;
+      @media ${({ theme }) => theme.mediaqury.laptopMid} {
+        font-size: 13rem;
+      }
+      @media ${({ theme }) => theme.mediaqury.laptopMid2} {
+        font-size: 9rem;
+        margin: 4rem 0;
+      }
+      @media ${({ theme }) => theme.mediaqury.mblMid} {
+        font-size: 8rem;
+      }
+      @media ${({ theme }) => theme.mediaqury.mblsmall} {
+        font-size: 7rem;
+      }
     }
     & > img {
       box-shadow: 5px 4px 10px rgb(0, 0, 0, 64%);
@@ -141,6 +154,12 @@ const ContentWapper = styled.div`
     & > h2 {
       margin: 2rem 0;
       font-size: 6rem;
+      @media ${({ theme }) => theme.mediaqury.projectMid3} {
+        font-size: 4rem;
+      }
+      @media ${({ theme }) => theme.mediaqury.mblMid} {
+        font-size: 3rem;
+      }
     }
   }
 `;
@@ -153,6 +172,17 @@ const BackgroundText = styled.h1`
   font-size: 23rem;
   font-weight: 900;
   text-shadow: 10px 4px 9px rgb(0 0 0 / 15%);
+  text-align: center;
+  @media ${({ theme }) => theme.mediaqury.laptopMid} {
+    font-size: 15rem;
+  }
+  @media ${({ theme }) => theme.mediaqury.laptopMid} {
+    font-size: 10rem;
+    width: 85%;
+  }
+  @media ${({ theme }) => theme.mediaqury.mblsmall} {
+    font-size: 8rem;
+  }
 `;
 const StackWapper = styled.div`
   margin: 5rem 0;
@@ -218,13 +248,25 @@ const BtnWapper = styled.div`
 `;
 const FullimageWapper = styled.div`
   margin: 4rem;
+  @media ${({ theme }) => theme.mediaqury.tabLarg2} {
+    margin: 1rem;
+  }
 
   & > div {
     display: flex;
     align-items: center;
+    @media ${({ theme }) => theme.mediaqury.tabLarg2} {
+      flex-direction: column;
+    }
     & > div {
       font-size: 4rem;
       padding: 3rem;
+      @media ${({ theme }) => theme.mediaqury.projectMid} {
+        font-size: 3rem;
+      }
+      @media ${({ theme }) => theme.mediaqury.projectMid3} {
+        font-size: 2.5rem;
+      }
     }
     & > img {
       height: 50%;
@@ -235,9 +277,15 @@ const FullimageWapper = styled.div`
   & > div:nth-child(even) {
     & > div {
       order: 1;
+      @media ${({ theme }) => theme.mediaqury.tabLarg2} {
+        order: 0;
+      }
     }
     & > img {
       order: 2;
+      @media ${({ theme }) => theme.mediaqury.tabLarg2} {
+        order: 0;
+      }
     }
   }
 `;

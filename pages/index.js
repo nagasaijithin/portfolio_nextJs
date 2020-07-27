@@ -19,6 +19,12 @@ const PosterWapper = styled.section`
     color: var(--blackTextColor);
     margin: 5rem;
     line-height: 1.4;
+    @media ${({ theme }) => theme.mediaqury.mblMid} {
+      font-size: 4.5rem;
+    }
+    @media ${({ theme }) => theme.mediaqury.mblsmall} {
+      margin: 3rem;
+    }
   }
 `;
 const AboutMeWapper = styled.section`
@@ -32,7 +38,9 @@ const AboutMeWapper = styled.section`
   color: var(--blackTextColor);
   line-height: 1.5;
   scroll-behavior: smooth;
-
+  @media ${({ theme }) => theme.mediaqury.mblMid} {
+    padding: 1rem;
+  }
   & > div {
     margin: 2rem 0;
   }
@@ -55,6 +63,7 @@ const PortfolioWapper = styled.section`
   }
   & > h2 {
     font-weight: 200;
+    text-align: center;
   }
 `;
 

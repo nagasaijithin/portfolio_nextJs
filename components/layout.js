@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import styled from "styled-components";
 import MainWitchLogo from "../images/whitelogo.svg";
 import { useRouter } from "next/router";
@@ -290,8 +290,75 @@ const Checkbox = ({ id }) => {
     );
   }
 };
+const MlbnavShow = styled.div`
+  height: 100%;
+  width: 40%;
+  position: fixed;
+  background: white;
+  z-index: 30;
+  box-shadow: 1px 1px 10px black;
+  left: -57%;
+  transition: all 1s ease;
+  @media ${({ theme }) => theme.mediaqury.mblMid2} {
+    width: 50%;
+  }
+  & > div {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    & > div:nth-child(1) {
+      height: 10%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+    }
+    & > div:nth-child(2) {
+      flex: 1;
+      display: flex;
+      font-size: 4rem;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      @media ${({ theme }) => theme.mediaqury.tabLarg3} {
+        font-size: 3rem;
+      }
+      @media ${({ theme }) => theme.mediaqury.mblMid2} {
+        font-size: 2.7rem;
+      }
+      & > ul {
+        list-style: none;
+        & > li {
+          padding: 2rem;
+          cursor: pointer;
+          -webkit-text-stroke-color: var(--blackTextColor);
+          -webkit-text-stroke-width: 0.5px;
+          -webkit-text-fill-color: transparent;
+          position: relative;
+          &:hover {
+            & > div {
+              width: 100%;
+            }
+          }
+          & > div {
+            width: 0%;
+            height: 0.2rem;
+            background: var(--blackTextColor);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: all 0.6s ease-in;
+          }
+        }
+      }
+    }
+  }
+`;
 const LayOut = ({ children }) => {
   const router = useRouter();
+  const MblNavref = useRef("");
   const { id } = router.query;
   return (
     <MainLayout>
@@ -305,7 +372,19 @@ const LayOut = ({ children }) => {
       </NavWapper>
       <MlbNav>
         <div>
-          {id ? <Link href="/">{"<-"}</Link> : <div>|||</div>}
+          {id ? (
+            <Link href="/">
+              <a>{"<-"}</a>
+            </Link>
+          ) : (
+            <div
+              onClick={() => {
+                MblNavref.current.style.left = "0px";
+              }}
+            >
+              |||
+            </div>
+          )}
           <div>
             <MainWitchLogo />
           </div>
@@ -314,6 +393,57 @@ const LayOut = ({ children }) => {
           </div>
         </div>
       </MlbNav>
+      <MlbnavShow ref={MblNavref}>
+        <div>
+          <div
+            onClick={() => {
+              MblNavref.current.style.left = "-57%";
+            }}
+          >
+            <h1>x</h1>
+          </div>
+          <div>
+            <ul>
+              <li
+                onClick={() => {
+                  MblNavref.current.style.left = "-57%";
+                  document.getElementById("home").scrollIntoView();
+                }}
+              >
+                <div></div>
+                Home
+              </li>
+              <li
+                onClick={() => {
+                  MblNavref.current.style.left = "-57%";
+                  document.getElementById("aboutme").scrollIntoView();
+                }}
+              >
+                <div></div>
+                About me
+              </li>
+              <li
+                onClick={() => {
+                  MblNavref.current.style.left = "-57%";
+                  document.getElementById("portfolio").scrollIntoView();
+                }}
+              >
+                <div></div>
+                Portfolio
+              </li>
+              <li
+                onClick={() => {
+                  MblNavref.current.style.left = "-57%";
+                  document.getElementById("contactme").scrollIntoView();
+                }}
+              >
+                <div></div>
+                Contact me
+              </li>
+            </ul>
+          </div>
+        </div>
+      </MlbnavShow>
       {children}
     </MainLayout>
   );

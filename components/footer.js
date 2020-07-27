@@ -14,7 +14,10 @@ const FooterWapper = styled.footer`
   flex-direction: column;
   align-items: stretch;
   justify-content: space-evenly;
-
+  @media ${({ theme }) => theme.mediaqury.tabLarg} {
+    width: 90%;
+    margin: 3rem auto 0;
+  }
   & > h2 {
     font-weight: 200;
     width: 70%;
