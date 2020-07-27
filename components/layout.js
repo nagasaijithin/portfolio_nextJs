@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 import MainWitchLogo from "../images/whitelogo.svg";
 import { useRouter } from "next/router";
@@ -12,6 +13,9 @@ const NavWapper = styled.div`
   color: var(--blackTextColor);
   position: sticky;
   top: 0;
+  @media ${({ theme }) => theme.mediaqury.laptopMid} {
+    display: none;
+  }
   & > ul {
     height: 100%;
     display: flex;
@@ -99,6 +103,113 @@ const NavWapper = styled.div`
     }
   }
 `;
+
+const MlbNav = styled.nav`
+  height: 10vh;
+  width: 100%;
+  box-shadow: 1px 1px 10px black;
+  padding: 2.2rem;
+  position: fixed;
+  background-color: var(--blackBackgroundColor);
+  display: none;
+  @media ${({ theme }) => theme.mediaqury.laptopMid} {
+    display: block;
+    z-index: 20;
+  }
+  & > div {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    & > a {
+      color: var(--blackTextColor);
+      text-decoration: none;
+      font-size: 4rem;
+    }
+    & > div:nth-child(2) {
+      & > svg {
+        height: auto;
+        width: 4rem;
+        & > g {
+          fill: var(--blackTextColor);
+        }
+      }
+    }
+    & > div:nth-child(1) {
+      color: var(--blackTextColor);
+      font-size: 3rem;
+      transform: rotate(90deg);
+    }
+    & > div:nth-child(3) {
+      & > span {
+        position: relative;
+        & > input {
+          height: 0;
+          width: 0;
+          visibility: hidden;
+          &:checked + label:after {
+            left: calc(100% - 5px);
+            transform: translateX(-100%);
+          }
+        }
+        & > label {
+          width: 8rem;
+          height: 4rem;
+          background: gray;
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          cursor: pointer;
+          border-radius: 100px;
+          &:after {
+            content: "";
+            width: 3rem;
+            height: 3rem;
+            background: white;
+            position: absolute;
+            border-radius: 50%;
+            top: 12%;
+            left: 6%;
+            transition: 0.3s;
+          }
+        }
+
+        input:checked + label {
+          background: #76a4da;
+        }
+
+        input:checked + label:after {
+          left: calc(100% - 5px);
+          transform: translateX(-100%);
+        }
+
+        label:active:after {
+          width: 31px;
+        }
+      }
+    }
+  }
+`;
+
+let trans = () => {
+  document.documentElement.classList.add("transition");
+  window.setTimeout(() => {
+    document.documentElement.classList.remove("transition");
+  }, 1000);
+};
+function checkBtn(e) {
+  e.persist();
+  if (e.target.checked) {
+    trans();
+    document.documentElement.setAttribute("data-mode", "dark");
+    localStorage.setItem("_theme", JSON.stringify("dark"));
+  } else {
+    trans();
+    document.documentElement.setAttribute("data-mode", "light");
+    localStorage.setItem("_theme", JSON.stringify("light"));
+  }
+}
 const HomeLinks = () => (
   <>
     <li onClick={() => document.getElementById("home").scrollIntoView()}>
@@ -117,13 +228,10 @@ const HomeLinks = () => (
       <div></div>
       Contact me
     </li>
-    <span>
-      <input type="checkbox" id="switch" name="theme" />
-
-      <label htmlFor="switch"></label>
-    </span>
+    <Checkbox id="dstbtn" />
   </>
 );
+
 const ProjectLinks = () => (
   <>
     <li>
@@ -132,41 +240,56 @@ const ProjectLinks = () => (
         <a>Go Back</a>
       </Link>
     </li>
-    <span>
-      <input type="checkbox" id="switch" name="theme" />
-      <label htmlFor="switch"></label>
-    </span>
+    <Checkbox id="dstbtn" />
   </>
 );
-const MlbNav = styled.nav`
-  height: 10vh;
-  width: 100%;
-  box-shadow: 1px 1px 10px black;
-  padding: 2.2rem;
-  position: fixed;
-  background-color: var(--blackBackgroundColor);
-  display: none;
-  & > div {
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    & > div:nth-child(1) {
-      & > svg {
-        height: auto;
-        width: 4rem;
-        & > g {
-          fill: var(--blackTextColor);
+const Checkbox = ({ id }) => {
+  let [state, setState] = useState("");
+  useEffect(() => {
+    let data = localStorage.getItem("_theme");
+    setState(JSON.parse(data));
+  });
+  let checktheMode = state;
+  if (checktheMode === "dark") {
+    return (
+      <span>
+        {
+          <input
+            type="checkbox"
+            id={id}
+            name="theme"
+            onChange={(e) => {
+              let updateCond = checktheMode === "dark" ? "light" : "dark";
+              setState(updateCond);
+              checkBtn(e);
+            }}
+            checked={true}
+          />
         }
-      }
-    }
-    & > div:nth-child(2) {
-      color: var(--blackTextColor);
-      font-size: 3rem;
-      transform: rotate(90deg);
-    }
+        <label htmlFor={id}></label>
+      </span>
+    );
+  } else {
+    return (
+      <span>
+        {
+          <input
+            type="checkbox"
+            id={id}
+            name="theme"
+            onChange={(e) => {
+              let updateCond = checktheMode === "dark" ? "light" : "dark";
+              setState(updateCond);
+              checkBtn(e);
+            }}
+            checked={false}
+          />
+        }
+        <label htmlFor={id}></label>
+      </span>
+    );
   }
-`;
+};
 const LayOut = ({ children }) => {
   const router = useRouter();
   const { id } = router.query;
@@ -182,10 +305,13 @@ const LayOut = ({ children }) => {
       </NavWapper>
       <MlbNav>
         <div>
+          {id ? <Link href="/">{"<-"}</Link> : <div>|||</div>}
           <div>
             <MainWitchLogo />
           </div>
-          <div>|||</div>
+          <div>
+            <Checkbox id="mldBtn" />
+          </div>
         </div>
       </MlbNav>
       {children}

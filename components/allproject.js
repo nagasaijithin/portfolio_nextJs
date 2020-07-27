@@ -57,20 +57,22 @@ const AllprojectsWapper = styled.div`
   width: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-
   padding: 2rem;
   grid-gap: 3rem;
+  @media ${({ theme }) => theme.mediaqury.laptopLarg} {
+    grid-gap: 10rem;
+  }
   & > div > div {
     width: 80%;
     margin: 0 auto;
-    & > h1 {
-      margin: 1rem 0;
+    & > h2 {
+      margin: 2rem 0;
     }
     & > p {
-      margin: 1rem 0;
+      margin: 2rem 0;
     }
     & > a {
-      margin: 1rem 0;
+      margin: 2rem 0;
       color: var(--blackTextColor);
     }
   }
