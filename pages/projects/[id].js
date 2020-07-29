@@ -116,6 +116,9 @@ const ProjectWapper = styled.div`
   color: var(--blackTextColor);
   padding: 3rem;
   z-index: 5;
+  @media ${({ theme }) => theme.mediaqury.laptopMid} {
+    margin-top: 4rem;
+  }
 `;
 const PosterWapper = styled.div`
   margin: 3rem 0;
@@ -175,10 +178,11 @@ const BackgroundText = styled.h1`
   text-align: center;
   @media ${({ theme }) => theme.mediaqury.laptopMid} {
     font-size: 15rem;
+    width: 100%;
+    transform: translate(-50%, -50%) rotate(7deg);
   }
   @media ${({ theme }) => theme.mediaqury.laptopMid} {
     font-size: 10rem;
-    width: 85%;
   }
   @media ${({ theme }) => theme.mediaqury.mblsmall} {
     font-size: 8rem;
@@ -225,6 +229,9 @@ const BtnWapper = styled.div`
     &:hover {
       &::after {
         height: 100%;
+        @media ${({ theme }) => theme.mediaqury.laptopMid} {
+          height: 0%;
+        }
       }
     }
     &::after {

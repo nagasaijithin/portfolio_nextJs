@@ -137,8 +137,9 @@ const MlbNav = styled.nav`
     }
     & > div:nth-child(1) {
       color: var(--blackTextColor);
-      font-size: 3rem;
+      font-size: 4rem;
       transform: rotate(90deg);
+      cursor: pointer;
     }
     & > div:nth-child(3) {
       & > span {
@@ -299,6 +300,7 @@ const MlbnavShow = styled.div`
   box-shadow: 1px 1px 10px black;
   left: -57%;
   transition: all 1s ease;
+  background-color: var(--blackBackgroundColor);
   @media ${({ theme }) => theme.mediaqury.mblMid2} {
     width: 50%;
   }
@@ -313,6 +315,8 @@ const MlbnavShow = styled.div`
       align-items: center;
       justify-content: center;
       font-size: 3rem;
+      cursor: pointer;
+      color: var(--blackTextColor);
     }
     & > div:nth-child(2) {
       flex: 1;
