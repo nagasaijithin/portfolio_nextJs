@@ -31,7 +31,22 @@ export default class MyDocument extends Document {
     return (
       <html data-mode="light">
         <Head>
-          <title>Nagasai jithin</title>
+          <meta
+            name="description"
+            content="Hi, my name is nagasai jithin I'm a frontend web developer most passionate, committed person I completed bachelor computer applications (B.C.A) on my second year I started to learn web development mostly my projects all react-redux This portfolio describes my all projects and about me"
+          />
+          <link rel="shortcut  icon" href="/static/logo.png" />
+
+          <meta
+            name="og:title"
+            property="og:title"
+            content="Naga Sai Jithin Pasupuleti Portfolio"
+          />
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+          <meta name="robots" content="index, follow" />
+
+          {/* <meta  property="twitter:card" content="summary_large_image"> */}
+          {/* <meta  property="twitter:url" content="nagasaijithin"> */}
           <link
             href="https://fonts.googleapis.com/css2?family=Raleway&display=swap"
             rel="stylesheet"

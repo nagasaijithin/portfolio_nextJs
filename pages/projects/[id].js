@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import styled from "styled-components";
-
+import Head from "next/head";
 import Footer from "../../components/footer";
 /////
 // all image
@@ -308,6 +308,9 @@ const Id = () => {
     return (
       <>
         <ProjectWapper>
+          <Head>
+            <title>{name} - Nagasai Jithin Project</title>
+          </Head>
           <PosterWapper>
             <div>
               <h1>{name}</h1>

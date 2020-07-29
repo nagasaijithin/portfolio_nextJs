@@ -1,4 +1,5 @@
 import App from "next/app";
+import Head from "next/head";
 import { ThemeProvider } from "styled-components";
 import { createGlobalStyle } from "styled-components";
 
@@ -70,6 +71,9 @@ export default class MyApp extends App {
     const { Component, pageProps } = this.props;
     return (
       <ThemeProvider theme={theme}>
+        <Head>
+          <title>Nagasai Jithin - Front End Web Developer</title>
+        </Head>
         <LayOut>
           <Component {...pageProps} />
           <GlobalStyle />
