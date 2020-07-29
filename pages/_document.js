@@ -45,8 +45,13 @@ export default class MyDocument extends Document {
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <meta name="robots" content="index, follow" />
 
-          {/* <meta  property="twitter:card" content="summary_large_image"> */}
-          {/* <meta  property="twitter:url" content="nagasaijithin"> */}
+          <meta property="twitter:card" content="summary_large_image" />
+          <meta property="twitter:url" content="nagasaijithin.netlify.com" />
+          <meta
+            name="keywords"
+            content="nagasaijithin, Nagsai Jithin, frontend web developer, nagasai jithin react redux developer, nagasai jithin portfolio, frontend web developer protfolio"
+          />
+
           <link
             href="https://fonts.googleapis.com/css2?family=Raleway&display=swap"
             rel="stylesheet"
