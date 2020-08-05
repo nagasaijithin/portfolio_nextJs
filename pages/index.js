@@ -103,16 +103,16 @@ const Home = () => {
             take the risk and quit my deploma. becase i'm intrsted computer youn
             age that inspire my take coures on Bachelor computer Application
             (B.C.A) so i decide to join ,then real scene come on screen the
-            "programming" , my line of code i'm happy so i decided continue the
-            codeing one day i got notification from youtube how learn code, then
-            i see the video and i searched more related videos, then i started
-            learning code in internet almost every thing free so that time i got
+            "programming" , my first line of code it's feel's very happy so i
+            decided continue the codeing one day i got notification from youtube
+            "how learn code", then i see the video and i searched more related
+            videos, then i started learning code in internet so that time i got
             love with javascript then, on my free time watched countless youtube
-            videos about Javascript. During time, I took online courses like
+            videos about Javascript. During time, I took online courses on udemy
             "The Web Developer Bootcamp" every one know the best way to learn is
             to practice practice practice so my free time to apply these
             concepts to real-world scenarios. then did some of personal projects
-            i describe one of them projects here
+            i describe one of them projects below
           </p>
         </div>
       </AboutMeWapper>
