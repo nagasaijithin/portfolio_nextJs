@@ -9,6 +9,10 @@ import photohub from "../images/posters/photohub.png";
 import restarunt from "../images/posters/restarunt.png";
 import sayhi from "../images/posters/sayhi.png";
 import wetherapp from "../images/posters/weatherapp.png";
+import kvrcommunications from "../images/posters/kvrcommunications.png";
+import myglobaliq from "../images/posters/myglobaliq.png";
+import sripadmavathienterprises from "../images/posters/sripadmavathienterprises.png";
+import tearoomfranchise from "../images/posters/tearoomfranchise.png";
 
 /////
 // all gif
@@ -17,6 +21,10 @@ import moviesgif from "../images/gifs/movies.gif";
 import photogif from "../images/gifs/photo.gif";
 import restaruntgif from "../images/gifs/restarunt.gif";
 import sayhigif from "../images/gifs/sayhi.gif";
+import sripgif from "../images/gifs/srip.gif";
+import kvrgif from "../images/gifs/kvr.gif";
+import myglobaliqgif from "../images/gifs/myglobaliq.gif";
+import tearomgif from "../images/gifs/tearom.gif";
 
 const projectdata = [
   {
@@ -31,6 +39,34 @@ const projectdata = [
     info: "PhotoHub, you can Download Most Beautiful Images And collections...",
     image: photohub,
     imagegif: photogif,
+  },
+  {
+    name: "My globaliq",
+    info:
+      "My Globaliq Project is One of my client project for their Requirement ",
+    image: myglobaliq,
+    imagegif: myglobaliqgif,
+  },
+  {
+    name: "Sri padmavathienterprises",
+    info:
+      "Sri padmavathienterprises Project is One of my client project for their Requirement ",
+    image: sripadmavathienterprises,
+    imagegif: sripgif,
+  },
+  {
+    name: "Tearoom franchise",
+    info:
+      "Tearoom franchise Project is One of my client project for their Requirement ",
+    image: tearoomfranchise,
+    imagegif: tearomgif,
+  },
+  {
+    name: "Kvr communications",
+    info:
+      "Kvr communications Project is One of my client project for their Requirement ",
+    image: kvrcommunications,
+    imagegif: kvrgif,
   },
   {
     name: "Movies",

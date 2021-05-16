@@ -11,6 +11,10 @@ import restarunt from "../../images/posters/restarunt.png";
 import sayhi from "../../images/posters/sayhi.png";
 import wetherapp from "../../images/posters/weatherapp.png";
 
+import kvrcommunications from "../../images/posters/kvrcommunications.png";
+import myglobaliq from "../../images/posters/myglobaliq.png";
+import sripadmavathienterprises from "../../images/posters/sripadmavathienterprises.png";
+import tearoomfranchise from "../../images/posters/tearoomfranchise.png";
 /////
 // all gif
 /////
@@ -31,6 +35,7 @@ import photoFone from "../../images/fulllayout/photoFone.png";
 import restaruntFhome from "../../images/fulllayout/restaruntFhome.png";
 import sayhiFhome from "../../images/fulllayout/sayhiFhome.png";
 import sayhiFprofile from "../../images/fulllayout/sayhiFprofile.png";
+
 const projectdata = [
   {
     name: "SayHI",
@@ -65,6 +70,50 @@ const projectdata = [
     ],
     fullcontent:
       "Photo hub is service to providing high-quality images for a user can see the different types of images and collections and Download images. This build with react,redux and styled-components with 'unsplash' API ",
+  },
+  {
+    name: "My globaliq",
+    info: "",
+    image: myglobaliq,
+    stack: ["HTML", "SCSS", "JAVASCRIPT", "FIREBASE"],
+    code: "",
+    site: "https://www.myglobaliq.com/",
+    fullcontent:
+      "My globaliq Project is One of my client project for their Requirement ",
+    fullimages: [],
+  },
+  {
+    name: "Sri padmavathienterprises",
+    info: "",
+    image: sripadmavathienterprises,
+    stack: ["HTML", "SCSS", "JAVASCRIPT"],
+    code: "",
+    site: "https://www.sripadmavathienterprises.com/",
+    fullcontent:
+      "Sri padmavathienterprises Project is One of my client project for their Requirement ",
+    fullimages: [],
+  },
+  {
+    name: "Tearoom franchise",
+    info: "",
+    image: tearoomfranchise,
+    stack: ["HTML", "SCSS", "JAVASCRIPT"],
+    code: "",
+    site: "https://tearoomfranchise.com/",
+    fullcontent:
+      "Tearoom franchise Project is One of my client project for their Requirement ",
+    fullimages: [],
+  },
+  {
+    name: "Kvr communications",
+    info: "",
+    image: kvrcommunications,
+    stack: ["HTML", "SCSS", "JAVASCRIPT"],
+    code: "",
+    site: "https://www.kvrcommunications.in/",
+    fullcontent:
+      "Kvr communications Project is One of my client project for their Requirement ",
+    fullimages: [],
   },
   {
     name: "Movies",
@@ -342,22 +391,22 @@ const Id = () => {
             <StackWapper>
               <h2>Stack</h2>
               <ul>
-                {stack.map((data, i) => (
-                  <li key={i}>{data}</li>
-                ))}
+                {stack.length > 0 &&
+                  stack.map((data, i) => <li key={i}>{data}</li>)}
               </ul>
             </StackWapper>
             <FullimageWapper>
-              {fullimages.map((data, i) => (
-                <div key={i}>
-                  <img src={data} alt={i} />
-                  <div>
-                    {fullimgcontent
-                      ? fullimgcontent[i]
-                      : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."}
+              {fullimages.length > 0 &&
+                fullimages.map((data, i) => (
+                  <div key={i}>
+                    <img src={data} alt={i} />
+                    <div>
+                      {fullimgcontent
+                        ? fullimgcontent[i]
+                        : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."}
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
             </FullimageWapper>
           </ContentWapper>
           <Footer />

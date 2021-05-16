@@ -13,6 +13,7 @@ const NavWapper = styled.div`
   color: var(--blackTextColor);
   position: sticky;
   top: 0;
+  z-index: 10;
   @media ${({ theme }) => theme.mediaqury.laptopMid} {
     display: none;
   }
